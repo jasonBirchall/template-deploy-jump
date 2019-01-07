@@ -23,3 +23,5 @@ bundles/
 vendor/pkg/
 pyenv
 Vagrantfile
+id_rsa
+.key
