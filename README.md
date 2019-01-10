@@ -54,6 +54,7 @@ Once your image is built (`docker images | grep template-deploy`), you can clone
 ```bash
 $ git clone git@github.com:ministryofjustice/pvb2-deploy.git
 $ cd pvb2-deploy
+$ git-crypt unlock
 ```
 Next we're going to run our `docker` image with a few arguments. Again, I'm going to use [pvb2-deploy](https://github.com/ministryofjustice/pvb2-deploy) with my own AWS profile name (`mojdsd`) and GitHub user (`jasonBirchall`) as an example.
 ``` bash
@@ -83,5 +84,7 @@ root@f3f0944277bf:/deploy#
 You can now start running `fab` commands from your terminal. For convenience, the Docker image outputs the update command for you.
 
 `fab user:jasonBirchall aws:mojdsd config:./cloudformation/pvp2.yaml passwords:./cloudformation/pvp2-secrets.yaml environment:staging application:pvp2 update`
+
+*Please note: the config and secrets file path may differ depending on repository* 
 
 Execute your `fab` command and then `exit` the image when complete.
