@@ -1,8 +1,11 @@
 fabric<2.0.0
-bootstrap-cfn>=0.7.6
+bootstrap-cfn==1.5.3
 bootstrap-salt>=1.3.3,<2.0.0
 pygithub
 dnspython
+boto3==1.7.64
+awscli==1.15.65
+botocore==1.10.64
 
 pygit2>=0.23.0
 salt-shaker>=1.0.1
