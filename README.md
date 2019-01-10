@@ -19,7 +19,7 @@ $ docker run \
        -v ~/.ssh:/root/.ssh \
        -v $PWD:/deploy \
        -e AWS=mojdsd \
-       -e APP=pvp2 \
+       -e APP=pvb \
        -e ENV=staging \
        -e USER=jasonBirchall \
        template-deploy \
@@ -64,7 +64,7 @@ $ docker run \
        -v ~/.ssh:/root/.ssh \
        -v $PWD:/deploy \
        -e AWS=mojdsd \
-       -e APP=pvp2 \
+       -e APP=pvb2 \
        -e ENV=staging \
        -e USER=jasonBirchall \
        template-deploy \
@@ -77,13 +77,13 @@ Identity added: /root/.ssh/id_rsa (/root/.ssh/id_rsa)
 pillar/staging/staging-secrets.sls:docker_envs:
 pillar/staging/staging-secrets.sls-  staging-pvb.dsd.io:
 
-fab user:jasonBirchall aws:mojdsd config:./cloudformation/pvp2.yaml passwords:./cloudformation/pvp2-secrets.yaml environment:staging application:pvp2 update
+fab user:jasonBirchall aws:mojdsd config:./cloudformation/pvb2.yaml passwords:./cloudformation/pvb2-secrets.yaml environment:staging application:pvb2 update
 
 root@f3f0944277bf:/deploy#
 ```
 You can now start running `fab` commands from your terminal. For convenience, the Docker image outputs the update command for you.
 
-`fab user:jasonBirchall aws:mojdsd config:./cloudformation/pvp2.yaml passwords:./cloudformation/pvp2-secrets.yaml environment:staging application:pvp2 update`
+`fab user:jasonBirchall aws:mojdsd config:./cloudformation/pvb2.yaml passwords:./cloudformation/pvb2-secrets.yaml environment:staging application:pvb2 update`
 
 *Please note: the config and secrets file path may differ depending on repository* 
 
