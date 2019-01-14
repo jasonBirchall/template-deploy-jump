@@ -1,0 +1,10 @@
+FROM python:2-alpine
+
+RUN apk add --no-cache openssh-client build-base linux-headers libgit2-dev libffi-dev
+
+COPY ./build /build
+WORKDIR /build
+RUN pip install -r requirements.txt
+
+WORKDIR /deploy
+ENTRYPOINT eval "$(ssh-agent)" && ssh-add && grep -A1 'docker_envs' pillar/$ENV/*secrets.sls && echo "\nfab user:$USER aws:$AWS config:./cloudformation/$APP.yaml passwords:./cloudformation/$APP-secrets.yaml environment:$ENV application:$APP update\n" && /bin/sh
