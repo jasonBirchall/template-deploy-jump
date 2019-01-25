@@ -7,5 +7,5 @@ boto3==1.7.64
 awscli==1.15.65
 botocore==1.10.64
 
-pygit2>=0.23.0
+pygit2==0.27.1
 salt-shaker>=1.0.1
