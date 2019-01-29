@@ -1,6 +1,6 @@
 FROM python:2-alpine
 
-RUN apk add --no-cache openssh-client build-base linux-headers libgit2-dev libffi-dev
+RUN apk add --no-cache openssh-client build-base linux-headers libgit2-dev libffi-dev gnupg
 
 COPY ./build /build
 WORKDIR /build
